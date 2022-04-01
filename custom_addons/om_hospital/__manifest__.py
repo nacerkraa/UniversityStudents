@@ -6,9 +6,13 @@
     'summary': "Hospital management system",
     'description': """Hospital management system""",
     'depends': [],
-    'data': ['views/views.xml', 'views/templates.xml'],
-    'demo': ['demo/demo.xml'],
-    'author': "My Company",
+    'data': [],
+    'demo': [],
+    'sequence':-100,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
     'website': "http://www.yourcompany.com",
+
 }
 
