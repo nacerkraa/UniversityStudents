@@ -7,7 +7,9 @@
     'description': """Hospital management system""",
     'author': 'Nacer KRAA',
     'depends': [],
-    'data': [],
+    'data': [
+        'views/menu.xml',
+    ],
     'demo': [],
     'sequence': -100,
     'application': True,
