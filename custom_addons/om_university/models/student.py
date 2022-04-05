@@ -7,3 +7,7 @@ class UniversityStudent(models.Model):
     name = fields.Char(string="Name")
     age = fields.Integer(string="Age")
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
+    email = fields.Char(string="Email")
+    phone = fields.Integer(string="¨Phone")
+    faculty = fields.Selection([('ntic', 'Faculté de Nouvelles technologies'), ('eco', 'Faculté des sciences économiques')], string="Gender")
+

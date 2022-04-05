@@ -11,9 +11,12 @@
                         <group>
                             <field name="name"/>
                             <field name="age"/>
+                            <field name="gender"/>
                         </group>
                         <group>
-                            <field name="gender"/>
+                            <field name="email"/>
+                            <field name="phone"/>
+                            <field name="faculty"/>
                         </group>
                     </group>
                 </sheet>
