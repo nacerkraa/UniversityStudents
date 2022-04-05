@@ -10,7 +10,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
-        'views/patient_view.xml',
+        'views/student_view.xml',
     ],
     'demo': [],
     'sequence': -100,
