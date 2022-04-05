@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Hospital Management",
+    'name': "University Transfers",
     'version': '1.0.0',
-    'category': 'Hospital',
-    'summary': "Hospital management system",
-    'description': """Hospital management system""",
+    'category': 'University',
+    'summary': "University Transfers System",
+    'description': """University Transfers System""",
     'author': 'Nacer KRAA',
     'depends': [],
     'data': [
