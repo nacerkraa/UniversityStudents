@@ -2,7 +2,7 @@
 <odoo>
 
     <menuitem id="menu_university_root"
-              name="university"
+              name="University"
               web_icon="om_university,static/description/icon.png"
               sequence="0"/>
 
