@@ -4,6 +4,7 @@ class UniversityStudent(models.Model):
     _name = 'university.student'
     _description = 'University Student'
 
+    ref = fields.Char(string="Ref")
     name = fields.Char(string="Name")
     age = fields.Integer(string="Age")
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")

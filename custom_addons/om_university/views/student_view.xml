@@ -6,7 +6,9 @@
         <field name="model">university.student</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+
+                <field name="ref" string="n° Inscription"/>
+                <field name="name" string="Patient Name"/>
                 <field name="age"/>
                 <field name="gender"/>
                 <field name="email"/>
@@ -26,13 +28,15 @@
                 <sheet>
                     <group>
                         <group>
+                            <field name="ref" string="n° Inscription"/>
                             <field name="name"/>
                             <field name="age"/>
                             <field name="gender"/>
+                        </group>
+
+                        <group>
                             <field name="email"/>
                             <field name="phone"/>
-                        </group>
-                        <group>
                             <field name="faculty"/>
                             <field name="rate"/>
                             <field name="establish_date"/>
@@ -40,6 +44,17 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="view_university_student_search" model="ir.ui.view">
+        <field name="name">university.student.search</field>
+        <field name="model">university.student</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ref" string="n° Inscription" filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"/>
+                <field name="name" string="Student Name"/>
+            </search>
         </field>
     </record>
 
