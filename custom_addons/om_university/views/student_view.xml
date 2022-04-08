@@ -54,6 +54,7 @@
             <search>
                 <field name="ref" string="n° Inscription" filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike', self)]"/>
                 <field name="name" string="Student Name"/>
+                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
             </search>
         </field>
     </record>
