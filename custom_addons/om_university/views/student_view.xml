@@ -25,21 +25,22 @@
         <field name="model">university.student</field>
         <field name="arch" type="xml">
             <form>
-            <sheet>
-            <group>
-            <group>
-                <field name="ref" string="n° Inscription"/>
-                <field name="name"/>
-                <field name="age"/>
-                <field name="gender"/>
-                <field name="email"/>
-            </group>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="ref" string="n° Inscription"/>
+                            <field name="name"/>
+                            <field name="age"/>
+                            <field name="gender"/>
+                            <field name="email"/>
+                        </group>
 
-            <group>
-                <field name="phone"/>
-                <field name="faculty"/>
-                <field name="rate"/>
-                <field name="establish_date"/>
+                        <group>
+                            <field name="phone"/>
+                            <field name="faculty"/>
+                            <field name="rate"/>
+                            <field name="establish_date"/>
+                            <field name="active" invisible="1"/>
 
                         </group>
                     </group>
@@ -48,18 +49,6 @@
         </field>
     </record>
 
-    <record id=" view_university_student_search" model="ir.ui.view">
-        <field name="name">university.student.search</field>
-        <field name="model">university.student</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="ref" string="n° Inscription" filter_domain="['|', ('name', 'ilike', self), ('ref', 'ilike',
-                self)]"/>
-                <field name="name" string="Student Name"/>
-                <filter name="filter_male" string="Male" domain="[('gender','=','male')]"/>
-            </search>
-        </field>
-    </record>
 
     <record id="action_university_student" model="ir.actions.act_window">
         <field name="name">Students</field>

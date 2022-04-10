@@ -13,3 +13,4 @@ class UniversityStudent(models.Model):
     faculty = fields.Selection([('ntic', 'Faculté de nouvelles technologies'), ('eco', 'Faculté des sciences économiques')], string="Faculty")
     rate = fields.Float(string="Rate")
     establish_date = fields.Date(string="Establish Date")
+    active = fields.Boolean(string="Active", default=True)
