@@ -28,8 +28,14 @@
         'views/views.xml',
         'views/templates.xml',
     ],
+
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'sequence': -100,
+    'application': True,
+    'auto_install': False,
+    'license': 'LGPL-3',
+    'website': "http://www.yourcompany.com",
 }
