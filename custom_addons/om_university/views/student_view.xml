@@ -41,7 +41,6 @@
                             <field name="rate"/>
                             <field name="establish_date"/>
                             <field name="active" invisible="1"/>
-
                         </group>
                     </group>
                 </sheet>
