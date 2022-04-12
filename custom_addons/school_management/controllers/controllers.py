@@ -3,7 +3,7 @@ from odoo import http
 
 
 class SchoolManagement(http.Controller):
-    @http.route('/school_management/school_management', auth='public')
+    @http.route('/custom', auth='public', website=True)
     def index(self, **kw):
         return "Hello, world"
 

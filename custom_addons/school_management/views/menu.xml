@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_school_root"
+              name="School"
+              web_icon="school_management,static/description/icon.png"
+              sequence="0"/>
+
+    <menuitem id="menu_student_master"
+              name="Student Details"
+              parent="menu_school_root"
+              sequence="0"/>
+
+
+</odoo>
