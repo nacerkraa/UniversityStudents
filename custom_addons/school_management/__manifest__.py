@@ -6,7 +6,7 @@
     'summary': "School Management System",
     'description': """School Management System""",
     'author': 'Nacer KRAA',
-    'depends': [],
+    'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',

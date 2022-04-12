@@ -4,11 +4,11 @@ from odoo import http
 
 class Academy(http.Controller):
 
-    @http.route('/academy/academy/', auth='public')
+    @http.route('/academy/academy/', auth='public', website=True)
     def index(self, **kw):
         Students = http.request.env['school.student']
         return http.request.render('school_management.index', {
-            'student': Students.search([])
+            'students': Students.search([])
         })
 
     # @http.route('/custom', auth='public', website=True)
