@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
+
+class Teachers(models.Model):
+    _name = 'academy.teachers'
 
 
-# class academy(models.Model):
-#     _name = 'academy.academy'
-#     _description = 'academy.academy'
+    name = fields.Char()
 
 #     name = fields.Char()
 #     value = fields.Integer()
