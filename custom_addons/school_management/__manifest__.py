@@ -11,6 +11,7 @@
         'security/ir.model.access.csv',
         'views/menu.xml',
         'views/student_view.xml',
+        'views/template.xml',
     ],
     'demo': [],
     'sequence': -100,

@@ -2,10 +2,20 @@
 from odoo import http
 
 
-class TestWebsite(http.Controller):
-    @http.route('/test_website/test_website', auth='public', website=True)
-    def index(self, **kwargs):
-        return "Hello, world"
+class Academy(http.Controller):
+
+    @http.route('/academy/academy/', auth='public')
+    def index(self, **kw):
+        return http.request.render('school.student', {
+            'school_management.index': ["Diana Padilla", "Jody Caroll", "Lester Vaughn"],
+        })
+
+    # @http.route('/custom', auth='public', website=True)
+    # def index(self):
+    #     student = http.request.env['school.student'].search([])
+    #     return http.request.render(
+    #         'school_management.index', {'students': student}
+    #     )
 
     # @http.route('/test_website/test_website/objects', auth='public')
     # def list(self, **kw):
