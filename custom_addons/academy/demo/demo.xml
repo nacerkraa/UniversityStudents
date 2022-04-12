@@ -3,11 +3,17 @@
     <record id="padilla" model="academy.teachers">
         <field name="name">Diana Padilla</field>
     </record>
+
     <record id="carroll" model="academy.teachers">
         <field name="name">Jody Carroll</field>
     </record>
+
     <record id="vaughn" model="academy.teachers">
         <field name="name">Lester Vaughn</field>
+    </record>
+
+    <record id="hamid" model="academy.teachers">
+        <field name="name">hamid sabti</field>
     </record>
 
 </odoo>

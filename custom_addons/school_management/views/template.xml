@@ -1,29 +1,13 @@
 <odoo>
-    <!--    <template id="index">-->
-    <!--        <t t-call="website.layout">-->
-    <!--            <t t-set="title">Students</t>-->
-    <!--            <div class="oe_structure">-->
-    <!--                <div class="container">-->
-    <!--                    <t t-foreach="students" t-as="student">-->
-    <!--                        <ul>-->
-    <!--                        <li>-->
-    <!--                            <t t-esc="student.name"/>-->
-    <!--                        </li>-->
-    <!--                    </ul>-->
-    <!--                    </t>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </t>-->
-    <!--    </template>-->
 
-
-        <template id="index">
-            <title>Academy</title>
-            <t t-foreach="students" t-as="student">
-                <p>
-                    <t t-esc="student"/>
-                </p>
-            </t>
-        </template>
+    <template id="index">
+        <title>Academy</title>
+        <t t-foreach="student" t-as="student">
+            <p>
+                <t t-esc="student.id"/>
+                <t t-esc="student.name"/>
+            </p>
+        </t>
+    </template>
 
 </odoo>
