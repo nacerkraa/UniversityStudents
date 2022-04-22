@@ -9,9 +9,11 @@
     'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
+        'views/website_form.xml',
         'views/menu.xml',
         'views/student_view.xml',
         'views/template.xml',
+
     ],
     'demo': [],
     'sequence': -100,
@@ -21,4 +23,3 @@
     'website': "http://www.yourcompany.com",
 
 }
-

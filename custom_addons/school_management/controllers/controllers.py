@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import http
-
+from odoo.http import request
 
 class Academy(http.Controller):
 
@@ -11,22 +11,15 @@ class Academy(http.Controller):
             'students': Students.search([])
         })
 
-    # @http.route('/custom', auth='public', website=True)
-    # def index(self):
-    #     student = http.request.env['school.student'].search([])
-    #     return http.request.render(
-    #         'school_management.index', {'students': student}
-    #     )
+class School(http.Controller):
 
-    # @http.route('/test_website/test_website/objects', auth='public')
-    # def list(self, **kw):
-    #     return http.request.render('test_website.listing', {
-    #         'root': '/test_website/test_website',
-    #         'objects': http.request.env['test_website.test_website'].search([]),
-    #     })
+    @http.route('/student_webform', type="http", auth="public", website=True)
+    def student_webform(self, **kw):
+        return http.request.render('school_management.create_student', {'student_name': 'Odoo Mates Test 123',
+                                                                  'doctor_rec': 'doctor_rec'})
 
-#     @http.route('/test_website/test_website/objects/<model("test_website.test_website"):obj>', auth='public')
-#     def object(self, obj, **kw):
-#         return http.request.render('test_website.object', {
-#             'object': obj
-#         })
+    @http.route('/create/webstudent', type="http", auth="public", website=True)
+    def create_webpatient(self, **kw):
+        request.env['school.student'].sudo().create(kw)
+        return request.render("school_management.student_thanks", {})
+
