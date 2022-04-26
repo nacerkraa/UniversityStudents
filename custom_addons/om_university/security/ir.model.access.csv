@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access.university.student,access_university_student,om_university.model_university_student,base.group_user,1,1,1,1
+access.university.transfer,access_university_transfer,om_university.model_university_transfer,base.group_user,1,1,1,1
