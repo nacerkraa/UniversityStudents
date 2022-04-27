@@ -15,5 +15,5 @@ class UniversityStudent(models.Model):
     phone = fields.Char(string="¨Phone")
     faculty_id = fields.Many2one('university.faculty', string="Faculty")
     rate = fields.Float(string="Rate")
-    establish_date = fields.Date(string="Establish Date")
+    establish_date = fields.Datetime(string="Establish Date", default=fields.Datetime.now)
     active = fields.Boolean(string="Active", default=True)
