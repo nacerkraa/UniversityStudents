@@ -5,7 +5,7 @@
         <field name="name">university.student.form</field>
         <field name="model">university.student</field>
         <field name="arch" type="xml">
-            <tree create="0">
+            <tree>
 
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Student Name"/>
