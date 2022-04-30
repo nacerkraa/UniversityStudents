@@ -29,7 +29,6 @@ class UniversityStudent(models.Model):
             else:
                 rec.age = 0
 
-            # add a new comments
 
     # @api.depends('univ_id')
     # def _cumpute_transfer(self):
