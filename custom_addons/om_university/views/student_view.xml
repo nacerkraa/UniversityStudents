@@ -46,15 +46,6 @@
                             <field name="active" invisible="1"/>
                         </group>
                     </group>
-                    <notebook>
-                        <page string="Université info" name="Université_info">
-                            <field name="establish_date" string="Annie du BAC"/>
-                            <field name="gender"/>
-                        </page>
-                        <page string="Faculté info" name="Faculté_info">
-                            <field name="age" invisible="1"/>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>
