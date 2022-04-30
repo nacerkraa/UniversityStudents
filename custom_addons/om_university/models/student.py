@@ -28,7 +28,7 @@ class UniversityStudent(models.Model):
                 rec.age = today.year - rec.establish_date.year
             else:
                 rec.age = 0
-
+     
 
     # @api.depends('univ_id')
     # def _cumpute_transfer(self):
