@@ -27,7 +27,7 @@
         <field name="name">university.student.form</field>
         <field name="model">university.student</field>
         <field name="arch" type="xml">
-            <form create="0" delete="0" edit="0">
+            <form create="0" delete="0">
                 <sheet>
                     <group>
                         <group>
