@@ -8,14 +8,15 @@
             <tree>
 
                 <field name="ref" string="n° Inscription"/>
-                <field name="name" string="Patient Name"/>
-                <field name="age"/>
+                <field name="name" string="Student Name"/>
+                <field name="establish_date" string="Annie du BAC"/>
                 <field name="gender"/>
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="faculty_id"/>
                 <field name="rate"/>
-                <field name="establish_date"/>
+                <field name="age" string="n° annie in univ"/>
+
             </tree>
         </field>
     </record>
@@ -30,7 +31,7 @@
                         <group>
                             <field name="ref" string="n° Inscription"/>
                             <field name="name"/>
-                            <field name="age"/>
+                            <field name="establish_date" string="Annie du BAC"/>
                             <field name="gender"/>
                             <field name="email"/>
                         </group>
@@ -39,7 +40,7 @@
                             <field name="phone"/>
                             <field name="faculty_id"/>
                             <field name="rate"/>
-                            <field name="establish_date" invisible="1"/>
+                            <field name="age" string="n° annie in univ"/>
                             <field name="active" invisible="1"/>
                         </group>
                     </group>
