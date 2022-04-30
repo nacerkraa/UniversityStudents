@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="view_university_faculty__tree" model="ir.ui.view">
-        <field name="name">university.faculty.form</field>
-        <field name="model">university.faculty</field>
+    <record id="view_university_univ__tree" model="ir.ui.view">
+        <field name="name">university.univ.form</field>
+        <field name="model">university.univ</field>
         <field name="arch" type="xml">
             <tree>
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Patient Name"/>
                 <field name="email"/>
-                <field name="univ_id" string="University"/>
             </tree>
         </field>
     </record>
 
-    <record id="view_university_faculty_form" model="ir.ui.view">
-        <field name="name">university.faculty.form</field>
-        <field name="model">university.faculty</field>
+    <record id="view_university_univ_form" model="ir.ui.view">
+        <field name="name">university.univ.form</field>
+        <field name="model">university.univ</field>
         <field name="arch" type="xml">
             <form>
                 <sheet>
@@ -28,7 +27,7 @@
                         </group>
 
                         <group>
-                            <field name="univ_id" string="University"/>
+
                         </group>
                     </group>
                 </sheet>
@@ -37,22 +36,22 @@
     </record>
 
 
-    <record id="action_university_faculty" model="ir.actions.act_window">
-        <field name="name">faculty</field>
+    <record id="action_university_univ" model="ir.actions.act_window">
+        <field name="name">Universities</field>
         <field name="type">ir.actions.act_window</field>
-        <field name="res_model">university.faculty</field>
+        <field name="res_model">university.univ</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Create your first faculty!
+                Create your first university!
             </p>
         </field>
     </record>
 
-    <menuitem id="menu_faculty"
-              name="Faculty"
-              action="action_university_faculty"
+    <menuitem id="menu_univ"
+              name="University"
+              action="action_university_univ"
               parent="menu_student_master"
               sequence="100"/>
 

@@ -12,6 +12,7 @@
         'views/menu.xml',
         'views/student_view.xml',
         'views/faculty_view.xml',
+        'views/univ_view.xml',
     ],
     'demo': [],
     'sequence': -100,

@@ -7,5 +7,7 @@ class UniversityTransfer(models.Model):
     ref = fields.Char(string="Ref")
     name = fields.Char(string="Name")
     email = fields.Char(string="Email")
+    univ_id = fields.Many2one('university.univ', string="University")
+
 
 
