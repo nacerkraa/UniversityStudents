@@ -13,9 +13,11 @@ class UniversityStudent(models.Model):
     gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
     email = fields.Char(string="Email")
     phone = fields.Char(string="¨Phone")
+    univ = fields.Char(string="Univ")
     faculty_id = fields.Many2one('university.faculty', string="Faculty")
     rate = fields.Float(string="Rate")
     establish_date = fields.Date(string="Establish Date")
+    type_transfer = fields.Char(string="type",compute='_cumpute_transfer')
     active = fields.Boolean(string="Active", default=True)
 
     @api.depends('establish_date')
@@ -27,4 +29,10 @@ class UniversityStudent(models.Model):
             else:
                 rec.age = 0
 
-
+    @api.depends('univ')
+    def _cumpute_transfer(self):
+        for rec in self:
+            if rec.univ == 'constantine2':
+                rec.type_transfer  = 'intarne'
+            else:
+                rec.type_transfer  = 'extarne'

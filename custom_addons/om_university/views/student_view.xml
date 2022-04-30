@@ -10,12 +10,14 @@
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Student Name"/>
                 <field name="establish_date" string="Annie du BAC"/>
+                <field name="univ"/>
+                <field name="type_transfer"/>
                 <field name="gender"/>
                 <field name="email"/>
                 <field name="phone"/>
                 <field name="faculty_id"/>
                 <field name="rate"/>
-                <field name="age" string="n° annie in univ"/>
+                <field name="age" />
 
             </tree>
         </field>
@@ -38,9 +40,11 @@
 
                         <group>
                             <field name="phone"/>
+                            <field name="univ" />
+                            <field name="type_transfer" invisible="1"/>
                             <field name="faculty_id"/>
                             <field name="rate"/>
-                            <field name="age" string="n° annie in univ"/>
+                            <field name="age" invisible="1"/>
                             <field name="active" invisible="1"/>
                         </group>
                     </group>
