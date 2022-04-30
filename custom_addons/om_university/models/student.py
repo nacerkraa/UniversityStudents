@@ -3,6 +3,7 @@ from odoo import api, fields, models
 class UniversityStudent(models.Model):
     _name = 'university.student'
     _description = 'University Student'
+    _rec_name = 'ref'
 
 
 
