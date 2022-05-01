@@ -66,6 +66,12 @@
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
                         </group>
+
+                        <notebook>
+                            <page string="Comment" name="comment">
+                                <field name="comment" placeholder="Enter Your Comment here"/>
+                            </page>
+                        </notebook>
                     </group>
                 </sheet>
             </form>

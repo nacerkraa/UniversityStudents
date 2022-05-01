@@ -19,6 +19,7 @@ class UniversityStudent(models.Model):
     rate = fields.Float(string="Rate")
     establish_date = fields.Date(string="Establish Date")
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
+    comment = fields.Html(string="comment")
     active = fields.Boolean(string="Active", default=True)
 
     Gestionnaire_centrale_id = fields.Many2one('res.users', string="Gestionnaire Centrale")
