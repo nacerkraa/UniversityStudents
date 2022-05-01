@@ -37,14 +37,14 @@
                             <field name="ref" string="n° Inscription"/>
                             <field name="name"/>
                             <field name="email"/>
+                            <field name="phone"/>
+                            <field name="faculty_id"/>
                         </group>
 
                         <group>
-                            <field name="phone"/>
-                            <field name="faculty_id"/>
                             <field name="univ_id"/>
                             <field name="rate"/>
-
+                            <button name="action_test" string="Test Button" type="object"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
                         </group>
