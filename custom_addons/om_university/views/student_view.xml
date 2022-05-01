@@ -42,7 +42,7 @@
                         </group>
 
                         <group>
-                            <field name="univ_id"/>
+                            <field name="univ_id" help="the name of the university"/>
                             <field name="rate"/>
                             <button name="action_test" string="Object Button" type="object" class="oe_highlight"/>
                             <button name="%(om_university.action_university_student)d"
