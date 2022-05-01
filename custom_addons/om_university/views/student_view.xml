@@ -13,15 +13,15 @@
 
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Student Name"/>
-                <field name="establish_date" string="Annie du BAC"/>
-                <field name="gender"/>
+                <field name="establish_date" string="Annie du BAC" optional="show"/>
+                <field name="gender" optional="hide"/>
                 <field name="email"/>
-                <field name="phone"/>
-                <field name="univ_id"/>
-                <field name="faculty_id"/>
-                <field name="rate"/>
-                <field name="age" string="n° des annis"/>
-                <field name="type_transfer" string="Type"/>
+                <field name="phone" optional="show"/>
+                <field name="univ_id" optional="show"/>
+                <field name="faculty_id" optional="show"/>
+                <field name="rate" optional="show"/>
+                <field name="age" string="n° des annis" optional="show"/>
+                <field name="type_transfer" string="Type" optional="show"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
