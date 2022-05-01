@@ -22,9 +22,9 @@ class UniversityStudent(models.Model):
     active = fields.Boolean(string="Active", default=True)
 
     state = fields.Selection([('draft', 'Draft'),
-                                ('under_review', 'under review'),
+                                ('under_review', 'Under Review'),
                                 ('accepted', 'Accepted'),
-                                ('refused', 'Refused')], string='Status')
+                                ('refused', 'Refused')], default='draft', string='Status', required=True)
 
 
 
