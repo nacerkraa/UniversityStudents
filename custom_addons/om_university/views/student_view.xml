@@ -18,7 +18,7 @@
                 <field name="rate"/>
                 <field name="age" string="n° des annis"/>
                 <field name="type_transfer" string="Type"/>
-                <field name="state" string="Status" decoration-success="state == 'accepted'" decoration-info="state == 'draft'" decoration-warning="state == 'refused'" widget="badge"/>
+                <field name="state" string="Status" decoration-success="state == 'accepted'" decoration-info="state == 'draft'" decoration-warning="state == 'under_review'" decoration-danger="state == 'refused'" widget="badge"/>
 
             </tree>
         </field>
