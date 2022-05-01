@@ -5,7 +5,11 @@
         <field name="name">university.student.form</field>
         <field name="model">university.student</field>
         <field name="arch" type="xml">
-            <tree create="0" delete="0">
+            <tree create="0" delete="0"
+                  decoration-success="state == 'accepted'"
+                  decoration-danger="state == 'refused'"
+                  decoration-info="state == 'draft'"
+                  decoration-warning="state == 'under_review'">
 
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Student Name"/>
@@ -18,7 +22,12 @@
                 <field name="rate"/>
                 <field name="age" string="n° des annis"/>
                 <field name="type_transfer" string="Type"/>
-                <field name="state" string="Status" decoration-success="state == 'accepted'" decoration-info="state == 'draft'" decoration-warning="state == 'under_review'" decoration-danger="state == 'refused'" widget="badge"/>
+                <field name="state" string="Status"
+                       decoration-success="state == 'accepted'"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'under_review'"
+                       decoration-danger="state == 'refused'"
+                       widget="badge"/>
 
             </tree>
         </field>
