@@ -44,7 +44,8 @@
                         <group>
                             <field name="univ_id"/>
                             <field name="rate"/>
-                            <button name="action_test" string="Test Button" type="object"/>
+                            <button name="action_test" string="Object Button" type="object" class="oe_highlight"/>
+                            <button name="%(om_university.action_university_student)d" string="Action Button" type="action" class="oe_highlight"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
                         </group>
