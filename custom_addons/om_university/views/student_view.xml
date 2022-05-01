@@ -69,7 +69,8 @@
 
                         <notebook>
                             <page string="Comment" name="comment">
-                                <field name="comment" placeholder="Enter Your Comment here"/>
+                                <field name="comment" placeholder="Enter Your Comment here"
+                                options="{'collaborative': true}"/>
                             </page>
                         </notebook>
                     </group>
