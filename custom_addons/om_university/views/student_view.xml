@@ -9,7 +9,7 @@
                   decoration-success="state == 'accepted'"
                   decoration-danger="state == 'refused'"
                   decoration-info="state == 'draft'"
-                  decoration-warning="state == 'under_review'" sample="1">
+                  decoration-warning="state == 'under_review'" sample="1" multi_edit="1">
 
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Student Name"/>
