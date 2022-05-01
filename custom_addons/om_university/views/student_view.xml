@@ -47,6 +47,7 @@
                             <button name="action_test" string="Object Button" type="object" class="oe_highlight"/>
                             <button name="%(om_university.action_university_student)d"
                                     string="Refuse" type="action"
+                                    help="On click in this you will be refuse the request that send from the student"
                                     confirm="Are you sure to refuse the request!"
                                     class="oe_highlight"/>
                             <field name="type_transfer" invisible="1"/>
