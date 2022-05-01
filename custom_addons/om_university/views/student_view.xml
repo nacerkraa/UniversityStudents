@@ -9,7 +9,7 @@
                   decoration-success="state == 'accepted'"
                   decoration-danger="state == 'refused'"
                   decoration-info="state == 'draft'"
-                  decoration-warning="state == 'under_review'">
+                  decoration-warning="state == 'under_review'" sample="1">
 
                 <field name="ref" string="n° Inscription"/>
                 <field name="name" string="Student Name"/>
@@ -52,6 +52,7 @@
                             <field name="phone"/>
                             <field name="faculty_id"/>
                             <field name="Gestionnaire_centrale_id" widget="many2one_avatar"/>
+                            <field name="establish_date" string="Annie du BAC" optional="show"/>
                         </group>
 
                         <group>
