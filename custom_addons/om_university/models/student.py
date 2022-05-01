@@ -21,6 +21,7 @@ class UniversityStudent(models.Model):
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     active = fields.Boolean(string="Active", default=True)
 
+    Gestionnaire_centrale_id = fields.Many2one('res.users', string="Gestionnaire Centrale")
     state = fields.Selection([('draft', 'Draft'),
                                 ('under_review', 'Under Review'),
                                 ('accepted', 'Accepted'),
