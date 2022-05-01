@@ -5,7 +5,7 @@
         <field name="name">university.student.form</field>
         <field name="model">university.student</field>
         <field name="arch" type="xml">
-            <tree create="0" delete="0"
+            <tree  delete="0"
                   decoration-success="state == 'accepted'"
                   decoration-danger="state == 'refused'"
                   decoration-info="state == 'draft'"
@@ -40,8 +40,13 @@
         <field name="arch" type="xml">
             <form create="0" delete="0">
                 <header>
-                    <field name="state" widget="statusbar" options="{'clickable': '1'}"
-                           statusbar_visible="draft,under_review,accepted"/>
+                    <!--options="{'clickable': '1'}-->
+                    <button name="action_draft" string="Return to Draft" type="object" />
+                    <button name="action_in_review" string="Mark Under Review" type="object" states="draft" />
+                    <button name="action_accepted" string="Mark accepted" class="oe_highlight" type="object" states="draft"/>
+                    <button name="action_refused" string="Mark refused" type="object" states="draft"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,under_review,accepted" options="{'clickable': 0}"/>
                 </header>
                 <sheet>
                     <group>

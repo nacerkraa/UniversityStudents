@@ -50,3 +50,22 @@ class UniversityStudent(models.Model):
 
     def action_test(self):
         print("Button Clicked!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+    # action on click on button
+    def action_draft(self):
+        for rec in self:
+                rec.state = 'draft'
+
+    def action_in_review(self):
+        for rec in self:
+                rec.state = 'under_review'
+
+    def action_accepted(self):
+        for rec in self:
+                rec.state = 'accepted'
+
+    def action_refused(self):
+        for rec in self:
+                rec.state = 'refused'
+
+
