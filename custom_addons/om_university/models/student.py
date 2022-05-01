@@ -47,10 +47,4 @@ class UniversityStudent(models.Model):
                 rec.type_transfer = 'Extarne'
 
     def action_test(self):
-        return {
-            'effect': {
-                'fadeout': 'slow',
-                'message': 'Clicked successfully',
-                'type': 'rainbow_man',
-            }
-        }
+        print("Button Clicked!!!!!!!!!!!!!!!!!!!!!!!!!")
