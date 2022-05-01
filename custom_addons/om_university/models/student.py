@@ -18,8 +18,15 @@ class UniversityStudent(models.Model):
     faculty_id = fields.Many2one('university.faculty', string="Faculty")
     rate = fields.Float(string="Rate")
     establish_date = fields.Date(string="Establish Date")
-    type_transfer = fields.Char(string="type",compute='_cumpute_transfer')
+    type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     active = fields.Boolean(string="Active", default=True)
+
+    state = fields.Selection([('draft', 'Draft'),
+                                ('under_review', 'under review'),
+                                ('accepted', 'Accepted'),
+                                ('refused', 'Refused')], string='Status')
+
+
 
     @api.depends('establish_date')
     def _cumpute_years(self):
