@@ -43,9 +43,9 @@
                     <!--options="{'clickable': '1'}-->
                     <button name="action_draft" string="Return to Draft" type="object" />
                     <button name="action_in_review" string="Mark Under Review" type="object" states="draft" />
-                    <button name="action_accepted" data-hotkey="a"
+                    <button name="action_accepted"
                             string="Mark accepted" class="oe_highlight" type="object" states="draft"/>
-                    <button name="action_refused" data-hotkey="r"
+                    <button name="action_refused" 
                             string="Mark refused" type="object" states="draft"/>
                     <field name="state" widget="statusbar"
                            statusbar_visible="draft,under_review,accepted" options="{'clickable': 0}"/>
