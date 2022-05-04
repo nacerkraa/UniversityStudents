@@ -22,7 +22,7 @@
                 <field name="rate" optional="show"/>
                 <field name="age" string="n° des annis" optional="show"/>
                 <field name="type_transfer" string="Type" optional="show"/>
-                <field name="Gestionnaire_centrale_id" widget="many2one_avatar_user"/>
+                <field name="Gestionnaire_centrale_id" widget="many2one_avatar_user" groups="base.group_no_one"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
