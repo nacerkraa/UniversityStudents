@@ -6,7 +6,7 @@
     'summary': "University Transfers System",
     'description': """University Transfers System""",
     'author': 'Nacer KRAA',
-    'depends': [],
+    'depends': ['mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/menu.xml',
