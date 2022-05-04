@@ -5,7 +5,7 @@
         <field name="name">university.student.form</field>
         <field name="model">university.student</field>
         <field name="arch" type="xml">
-            <tree  delete="0"
+            <tree delete="0"
                   decoration-success="state == 'accepted'"
                   decoration-danger="state == 'refused'"
                   decoration-info="state == 'draft'"
@@ -22,17 +22,18 @@
                 <field name="rate" optional="show"/>
                 <field name="age" string="n° des annis" optional="show"/>
                 <field name="type_transfer" string="Type" optional="show"/>
-                <field name="Gestionnaire_centrale_id" widget="many2one_avatar_user" groups="base.group_no_one"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
                        decoration-warning="state == 'under_review'"
                        decoration-danger="state == 'refused'"
                        widget="badge"/>
-
             </tree>
         </field>
     </record>
+
+
+
 
     <record id="view_university_student_form" model="ir.ui.view">
         <field name="name">university.student.form</field>
@@ -41,8 +42,8 @@
             <form create="0" delete="0">
                 <header>
                     <!--options="{'clickable': '1'}-->
-                    <button name="action_draft" string="Return to Draft" type="object" />
-                    <button name="action_in_review" string="Mark Under Review" type="object" states="draft" />
+                    <button name="action_draft" string="Return to Draft" type="object"/>
+                    <button name="action_in_review" string="Mark Under Review" type="object" states="draft"/>
                     <button name="action_accepted"
                             string="Mark accepted" class="oe_highlight" type="object" states="draft"/>
                     <button name="action_refused"
@@ -58,24 +59,14 @@
                             <field name="email"/>
                             <field name="phone"/>
                             <field name="faculty_id"/>
-                            <field name="Gestionnaire_centrale_id" widget="many2one_avatar"/>
                             <field name="establish_date" string="Annie du BAC" optional="show"/>
                         </group>
 
                         <group>
                             <field name="univ_id" help="the name of the university"/>
                             <field name="rate"/>
-                            <button name="action_test"
-                                    groups="base.group_no_one"
-                                    string="Object Button"
-                                    type="object"
-                                    class="oe_highlight"/>
-                            <button name="%(om_university.action_university_student)d"
-                                    groups="base.group_no_one"
-                                    string="Refuse" type="action"
-                                    help="On click in this you will be refuse the request that send from the student"
-                                    confirm="Are you sure to refuse the request!"
-                                    class="oe_highlight"/>
+                            <field name="file" filename="file_name" string="Student Files"/>
+                            <field name="file_name" invisible="1"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
                         </group>
