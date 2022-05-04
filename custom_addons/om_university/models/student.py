@@ -27,7 +27,7 @@ class UniversityStudent(models.Model):
     state = fields.Selection([('draft', 'Draft'),
                                 ('under_review', 'Under Review'),
                                 ('accepted', 'Accepted'),
-                                ('refused', 'Refused')], default='draft', string='Status', required=True)
+                                ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True)
 
 
 
