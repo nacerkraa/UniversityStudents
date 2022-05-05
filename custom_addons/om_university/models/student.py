@@ -7,18 +7,34 @@ class UniversityStudent(models.Model):
     _rec_name = 'ref'
 
 
-
-
     # gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
+
+
     ref = fields.Char(string="Ref")
-    name = fields.Char(string="Name")
-    age = fields.Integer(string="Age", compute='_cumpute_years')
+    first_name = fields.Char(string="Firstname")
+    last_name = fields.Char(string="Lastname")
     email = fields.Char(string="Email")
-    phone = fields.Char(string="¨Phone")
-    current_university = fields.Char(string="University")
-    current_faculty = fields.Char(string="University")
+    age = fields.Integer(string="Age")
+    address = fields.Char(string="Address")
+    nationality = fields.Char(string="nationality")
+    s_bac = fields.Char(string="Serie de Bac")
+    f_bac = fields.Char(string="Filiere de Bac")
     rate = fields.Float(string="Rate")
+    e_level = fields.Selection([('L1', '1ere leciance'),
+                                ('L2', '2eme leciance'),
+                                ('L3', '3eme leciance'),
+                                ('M1', '1ere master'),
+                                ('M2', '2eme master')], string="Level")
     establish_date = fields.Date(string="Establish Date")
+    n_years_repeating = fields.Integer(string="Age")
+    c_academic = fields.Selection([('Oui', 'Oui'),
+                                ('Non', 'Non')], string="Level")
+    current_university = fields.Char(string="University")
+    current_faculty = fields.Char(string="Faculty1")
+    next_faculty = fields.Char(string="Faculty2")
+
+
+    n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     comment = fields.Html(string="comment")
     active = fields.Boolean(string="Active", default=True)
@@ -42,9 +58,9 @@ class UniversityStudent(models.Model):
         for rec in self:
             today = date.today()
             if rec.establish_date:
-                rec.age = today.year - rec.establish_date.year
+                rec.n_years = today.year - rec.establish_date.year
             else:
-                rec.age = 0
+                rec.n_years = 0
 
 
     @api.depends('current_university')

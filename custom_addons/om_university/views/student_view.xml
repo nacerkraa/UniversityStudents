@@ -12,14 +12,15 @@
                   decoration-warning="state == 'under_review'" sample="1" multi_edit="1">
 
                 <field name="ref" string="n° d'immatriculation"/>
-                <field name="name" string="Nom"/>
+                <field name="first_name" string="Nom"/>
+                <field name="last_name" string="Prenom"/>
                 <field name="establish_date" string="Date de 1ére inscription à l'université" optional="show"/>
                 <field name="email"/>
-                <field name="phone" optional="show"/>
                 <field name="current_university" string="University" optional="show"/>
                 <field name="current_faculty" string="Faculty" optional="show"/>
                 <field name="rate" optional="show"/>
-                <field name="age" string="n° des annis" optional="show"/>
+                <field name="n_years" string="n° des annis" optional="show"/>
+                <field name="e_level" string="annee actuel" optional="show"/>
                 <field name="type_transfer" string="Type" optional="show"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
@@ -52,9 +53,9 @@
                     <group>
                         <group>
                             <field name="ref" string="n° d'immatriculation"/>
-                            <field name="name"/>
+                            <field name="first_name" string="Nom"/>
+                            <field name="last_name" string="Prenom"/>
                             <field name="email"/>
-                            <field name="phone"/>
                             <field name="establish_date" string="Annie du BAC" optional="show"/>
                         </group>
 
@@ -63,6 +64,7 @@
                             <field name="current_faculty" string="Faculty"/>
                             <field name="rate"/>
                             <field name="file" filename="file_name" string="Student Files"/>
+                            <field name="e_level" string="annee actuel" optional="show"/>
                             <field name="file_name" invisible="1"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>

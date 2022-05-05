@@ -24,7 +24,7 @@
 
                             <div class="form-group">
                                 <label for="student_name" class="control-label">Name</label>
-                                <input type="text" name="name" t-att-value="name" id="student_name"
+                                <input type="text" name="first_name" t-att-value="first_name" id="student_name"
                                        class="form-control" placeholder="Enter Your Name" required="required"/>
                             </div>
 
@@ -74,7 +74,7 @@
                                         The Student has been Created successfully.
                                     </div>
                                     <p>
-                                        Visit Our website At ANy Time
+                                        Visit Our website At Any Time
                                     </p>
                                 </div>
                             </div>
