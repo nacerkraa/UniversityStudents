@@ -52,7 +52,7 @@
     <menuitem id="menu_univ"
               name="University"
               action="action_university_univ"
-              parent="menu_student_master"
-              sequence="100"/>
+              parent="menu_universities_master"
+              sequence="50"/>
 
 </odoo>

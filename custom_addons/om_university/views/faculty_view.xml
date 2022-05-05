@@ -53,7 +53,7 @@
     <menuitem id="menu_faculty"
               name="Faculty"
               action="action_university_faculty"
-              parent="menu_student_master"
+              parent="menu_universities_master"
               sequence="100"/>
 
 </odoo>

@@ -11,5 +11,10 @@
               parent="menu_university_root"
               sequence="0"/>
 
+    <menuitem id="menu_universities_master"
+              name="Universities Details"
+              parent="menu_university_root"
+              sequence="2"/>
+
 
 </odoo>
