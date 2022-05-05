@@ -16,13 +16,13 @@ class UniversityStudent(models.Model):
     email = fields.Char(string="Email")
     age = fields.Integer(string="Age")
     address = fields.Char(string="Address")
-    nationality = fields.Char(string="nationality")
+    nationality = fields.Char(string="Nationality")
     s_bac = fields.Char(string="Serie de Bac")
     f_bac = fields.Char(string="Filiere de Bac")
     rate = fields.Float(string="Rate")
-    e_level = fields.Selection([('L1', '1ere leciance'),
-                                ('L2', '2eme leciance'),
-                                ('L3', '3eme leciance'),
+    e_level = fields.Selection([('L1', '1er année de licence'),
+                                ('L2', '2eme année de licence'),
+                                ('L3', '3eme année de licence'),
                                 ('M1', '1ere master'),
                                 ('M2', '2eme master')], string="Level")
     establish_date = fields.Date(string="Establish Date")

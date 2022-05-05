@@ -39,7 +39,6 @@
         <field name="arch" type="xml">
             <form create="0" delete="0">
                 <header>
-                    <!--options="{'clickable': '1'}-->
                     <button name="action_draft" string="Return to Draft" type="object"/>
                     <button name="action_in_review" string="Mark Under Review" type="object" states="draft"/>
                     <button name="action_accepted"
@@ -63,8 +62,8 @@
                             <field name="current_university" string="University" help="the name of the university"/>
                             <field name="current_faculty" string="Faculty"/>
                             <field name="rate"/>
-                            <field name="file" filename="file_name" string="Student Files"/>
                             <field name="e_level" string="annee actuel" optional="show"/>
+                            <field name="file" filename="file_name" string="Student Files"/>
                             <field name="file_name" invisible="1"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
