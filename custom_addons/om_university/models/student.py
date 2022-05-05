@@ -7,9 +7,6 @@ class UniversityStudent(models.Model):
     _rec_name = 'ref'
 
 
-    # gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
-
-
     ref = fields.Char(string="Ref")
     first_name = fields.Char(string="Firstname")
     last_name = fields.Char(string="Lastname")
