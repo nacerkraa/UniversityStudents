@@ -7,18 +7,31 @@ class UniversityStudent(models.Model):
     _rec_name = 'ref'
 
 
-
-
     ref = fields.Char(string="Ref")
-    name = fields.Char(string="Name")
-    age = fields.Integer(string="Age", compute='_cumpute_years')
-    gender = fields.Selection([('male', 'Male'), ('female', 'Female')], string="Gender")
+    first_name = fields.Char(string="Firstname")
+    last_name = fields.Char(string="Lastname")
     email = fields.Char(string="Email")
-    phone = fields.Char(string="¨Phone")
-    univ_id = fields.Many2one('university.univ', string="University")
-    faculty_id = fields.Many2one('university.faculty', string="Faculty")
+    age = fields.Integer(string="Age")
+    address = fields.Char(string="Address")
+    nationality = fields.Char(string="Nationality")
+    s_bac = fields.Char(string="Serie de Bac")
+    f_bac = fields.Char(string="Filiere de Bac")
     rate = fields.Float(string="Rate")
+    e_level = fields.Selection([('L1', '1er année de licence'),
+                                ('L2', '2eme année de licence'),
+                                ('L3', '3eme année de licence'),
+                                ('M1', '1ere master'),
+                                ('M2', '2eme master')], string="Level")
     establish_date = fields.Date(string="Establish Date")
+    n_years_repeating = fields.Integer(string="Age")
+    c_academic = fields.Selection([('Oui', 'Oui'),
+                                ('Non', 'Non')], string="Level")
+    current_university = fields.Char(string="University")
+    current_faculty = fields.Char(string="Faculty1")
+    next_faculty = fields.Char(string="Faculty2")
+
+
+    n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     comment = fields.Html(string="comment")
     active = fields.Boolean(string="Active", default=True)
@@ -42,21 +55,19 @@ class UniversityStudent(models.Model):
         for rec in self:
             today = date.today()
             if rec.establish_date:
-                rec.age = today.year - rec.establish_date.year
+                rec.n_years = today.year - rec.establish_date.year
             else:
-                rec.age = 0
+                rec.n_years = 0
 
 
-    @api.depends('univ_id')
+    @api.depends('current_university')
     def _cumpute_transfer(self):
         for rec in self:
-            if rec.univ_id.name == 'Université abdelhamid mehri constantine 2':
+            if rec.current_university == 'Université abdelhamid mehri constantine 2':
                 rec.type_transfer = 'Interne'
             else:
                 rec.type_transfer = 'Extarne'
 
-    def action_test(self):
-        print("Button Clicked!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     # action on click on button
     def action_draft(self):

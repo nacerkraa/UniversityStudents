@@ -1,6 +1,6 @@
 from odoo import api, fields, models
 
-class univ(models.Model):
+class univs(models.Model):
     _name = 'university.univ'
     _description = 'University '
 
