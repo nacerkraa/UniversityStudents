@@ -17,7 +17,7 @@
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
                             <div class="form-group">
-                                <label for="student_ref" class="control-label">Ref</label>
+                                <label for="student_ref" class="control-label">Ref :</label>
                                 <input type="text" name="ref" t-att-value="ref" id="student_ref"
                                        class="form-control" placeholder="registration number" required="required"/>
                             </div>
@@ -25,18 +25,25 @@
                             <div class="form-group">
                                 <label for="student_name" class="control-label">Name</label>
                                 <input type="text" name="name" t-att-value="name" id="student_name"
-                                       class="form-control" placeholder="e.g. John Doe" required="required"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="control-label">Email</label>
-                                <input type="email" name="email" t-att-value="email" id="email_id"
-                                       class="form-control" required="required"/>
+                                       class="form-control" placeholder="Enter Your Name" required="required"/>
                             </div>
 
                             <div class="form-group">
-                                <label for="student_university" class="control-label">Current University</label>
-                                <input type="text" name="univ_id" t-att-value="name" id="student_university"
-                                       class="form-control" placeholder="kkkkk" required="required"/>
+                                <label for="student_email" class="control-label">Email :</label>
+                                <input type="email" name="email" t-att-value="email" id="student_email"
+                                       class="form-control" placeholder="Enter Your Email" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_univ" class="control-label">University :</label>
+                                <input type="text" name="current_university" t-att-value="current_university" id="student_univ"
+                                       class="form-control" placeholder="Enter Your Current University" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_date" class="control-label">L'annie de bac :</label>
+                                <input type="date" name="establish_date" t-att-value="establish_date" id="student_date"
+                                       class="form-control" required="required"/>
                             </div>
 
                             <div class="clearfix oe_login_buttons">

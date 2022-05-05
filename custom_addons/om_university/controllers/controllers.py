@@ -19,8 +19,8 @@ class School(http.Controller):
 
     @http.route('/student_webform', type="http", auth="public", website=True)
     def student_webform(self, **kw):
-        return http.request.render('om_university.create_student', {'student_name': 'Odoo Mates Test 123',
-                                                                  'doctor_rec': 'doctor_rec'})
+        Students = http.request.env['university.student']
+        return http.request.render('om_university.create_student', {'students': Students.search([])})
 
     @http.route('/create/webstudent', type="http", auth="public", website=True)
     def create_webpatient(self, **kw):

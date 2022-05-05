@@ -11,14 +11,13 @@
                   decoration-info="state == 'draft'"
                   decoration-warning="state == 'under_review'" sample="1" multi_edit="1">
 
-                <field name="ref" string="n° Inscription"/>
-                <field name="name" string="Student Name"/>
-                <field name="establish_date" string="Annie du BAC" optional="show"/>
-                <field name="gender" optional="hide"/>
+                <field name="ref" string="n° d'immatriculation"/>
+                <field name="name" string="Nom"/>
+                <field name="establish_date" string="Date de 1ére inscription à l'université" optional="show"/>
                 <field name="email"/>
                 <field name="phone" optional="show"/>
-                <field name="univ_id" optional="show"/>
-                <field name="faculty_id" optional="show"/>
+                <field name="current_university" string="University" optional="show"/>
+                <field name="current_faculty" string="Faculty" optional="show"/>
                 <field name="rate" optional="show"/>
                 <field name="age" string="n° des annis" optional="show"/>
                 <field name="type_transfer" string="Type" optional="show"/>
@@ -31,8 +30,6 @@
             </tree>
         </field>
     </record>
-
-
 
 
     <record id="view_university_student_form" model="ir.ui.view">
@@ -54,16 +51,16 @@
                 <sheet>
                     <group>
                         <group>
-                            <field name="ref" string="n° Inscription"/>
+                            <field name="ref" string="n° d'immatriculation"/>
                             <field name="name"/>
                             <field name="email"/>
                             <field name="phone"/>
-                            <field name="faculty_id"/>
                             <field name="establish_date" string="Annie du BAC" optional="show"/>
                         </group>
 
                         <group>
-                            <field name="univ_id" help="the name of the university"/>
+                            <field name="current_university" string="University" help="the name of the university"/>
+                            <field name="current_faculty" string="Faculty"/>
                             <field name="rate"/>
                             <field name="file" filename="file_name" string="Student Files"/>
                             <field name="file_name" invisible="1"/>
