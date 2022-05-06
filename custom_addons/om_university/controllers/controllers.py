@@ -23,6 +23,6 @@ class School(http.Controller):
 
     @http.route('/create/webstudent', type="http", auth="public", website=True)
     def create_webpatient(self, **kw):
-        request.env['university.student'].sudo().create(kw)
+        request.env['university.student'].create(kw)
         return request.render("om_university.student_thanks", {})
 
