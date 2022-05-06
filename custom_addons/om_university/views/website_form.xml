@@ -2,7 +2,7 @@
 <odoo>
 
     <record id="menu_student_form12" model="website.menu">
-        <field name="name">Create Student</field>
+        <field name="name">Demande de transfert</field>
         <field name="url">/student_webform</field>
         <field name="parent_id" ref="website.main_menu"/>
         <field name="sequence">55</field>
