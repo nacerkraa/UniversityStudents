@@ -17,7 +17,7 @@ class Academy(http.Controller):
 
 class School(http.Controller):
 
-    @http.route('/student_webform', type="http", auth="public", website=True)
+    @http.route('/student_webform', type="http", auth="user", website=True)
     def student_webform(self, **kw):
         return http.request.render('om_university.create_student', {'first_name': 'Nacer'})
 
