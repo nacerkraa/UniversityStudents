@@ -12,6 +12,7 @@
                   decoration-warning="state == 'under_review'" sample="1" multi_edit="1">
 
                 <field name="ref" string="n° d'immatriculation"/>
+                <field name="s_bac" string="Serie de Bac"/>
                 <field name="first_name" string="Nom"/>
                 <field name="last_name" string="Prenom"/>
                 <field name="establish_date" string="Date de 1ére inscription à l'université" optional="show"/>
@@ -54,6 +55,7 @@
                     <group>
                         <group>
                             <field name="ref" string="n° d'immatriculation"/>
+                            <field name="s_bac" string="Serie de Bac"/>
                             <field name="first_name" string="Nom"/>
                             <field name="last_name" string="Prenom"/>
                             <field name="email"/>
