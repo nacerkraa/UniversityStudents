@@ -11,22 +11,22 @@
                   decoration-info="state == 'draft'"
                   decoration-warning="state == 'under_review'" sample="1" multi_edit="1">
 
-                <field name="ref" string="n° d'immatriculation"/>
-                <field name="s_bac" string="Serie de Bac"/>
-                <field name="first_name" string="Nom"/>
-                <field name="last_name" string="Prenom"/>
-                <field name="establish_date" string="Date de 1ére inscription à l'université" optional="show"/>
-                <field name="email"/>
-                <field name="address"/>
-                <field name="nationality"/>
-                <field name="f_bac"/>
-                <field name="e_level"/>
+                <field name="ref" string="n° d'immatriculation" optional="hide"/>
+                <field name="s_bac" string="Serie de Bac" />
+                <field name="first_name" string="Nom" optional="show"/>
+                <field name="last_name" string="Prenom" optional="hide"/>
+                <field name="establish_date" string="Date de 1ére inscription à l'université" optional="hide"/>
+                <field name="email" optional="show"/>
+                <field name="address" optional="hide"/>
+                <field name="nationality" optional="hide"/>
+                <field name="f_bac" optional="hide"/>
+                <field name="e_level" optional="show"/>
                 <field name="current_university" string="University" optional="show"/>
                 <field name="current_faculty" string="Faculty" optional="show"/>
                 <field name="rate" optional="show"/>
                 <field name="n_years" string="n° des annis" optional="show"/>
-                <field name="e_level" string="annee actuel" optional="show"/>
                 <field name="type_transfer" string="Type" optional="show"/>
+                <field name="n_years_repeating" optional="show"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
@@ -61,19 +61,19 @@
                             <field name="first_name" string="Nom"/>
                             <field name="last_name" string="Prenom"/>
                             <field name="email"/>
-                            <field name="establish_date" string="Annie du BAC" optional="show"/>
                             <field name="address"/>
                             <field name="nationality"/>
+                            <field name="rate"/>
+                            <field name="f_bac" />
+                            <field name="establish_date" string="Annie du BAC" />
                         </group>
 
                         <group>
                             <field name="current_university" string="University" help="the name of the university"/>
                             <field name="current_faculty" string="Faculty"/>
-                            <field name="rate"/>
-                            <field name="e_level" string="annee actuel" optional="show"/>
+                            <field name="e_level" string="Annie actuel"/>
+                            <field name="n_years_repeating"/>
                             <field name="file" filename="file_name" string="Student Files"/>
-                            <field name="f_bac"/>
-                            <field name="e_level"/>
                             <field name="file_name" invisible="1"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
