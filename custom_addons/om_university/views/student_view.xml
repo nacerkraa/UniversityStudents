@@ -24,9 +24,9 @@
                 <field name="current_university" string="University" optional="show"/>
                 <field name="current_faculty" string="Faculty" optional="show"/>
                 <field name="rate" optional="show"/>
-                <field name="n_years" string="n° des annis" optional="show"/>
-                <field name="type_transfer" string="Type" optional="show"/>
-                <field name="n_years_repeating" optional="show"/>
+                <field name="n_years" string="n° des annis" optional="hide"/>
+                <field name="type_transfer" string="Type de transfert" optional="show"/>
+                <field name="n_years_repeating" optional="hide"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
