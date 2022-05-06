@@ -19,8 +19,7 @@ class School(http.Controller):
 
     @http.route('/student_webform', type="http", auth="public", website=True)
     def student_webform(self, **kw):
-        Students = http.request.env['university.student']
-        return http.request.render('om_university.create_student', {'students': Students.search([])})
+        return http.request.render('om_university.create_student', {'first_name': 'Nacer'})
 
     @http.route('/create/webstudent', type="http", auth="public", website=True)
     def create_webpatient(self, **kw):
