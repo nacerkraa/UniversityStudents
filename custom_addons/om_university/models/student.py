@@ -23,7 +23,7 @@ class UniversityStudent(models.Model):
                                 ('M1', '1ere master'),
                                 ('M2', '2eme master')], string="Level")
     establish_date = fields.Date(string="Establish Date")
-    n_years_repeating = fields.Integer(string="Age")
+    n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
     c_academic = fields.Selection([('Oui', 'Oui'),
                                 ('Non', 'Non')], string="Level")
     current_university = fields.Char(string="University")
