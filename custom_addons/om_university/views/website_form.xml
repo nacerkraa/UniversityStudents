@@ -5,10 +5,10 @@
         <field name="name">Demande de transfert</field>
         <field name="url">/student_webform</field>
         <field name="parent_id" ref="website.main_menu"/>
-        <field name="sequence">55</field>
+        <field name="sequence">100</field>
     </record>
 
-    <template id="create_student" name="Create Student">
+    <template id="create_student" name="Demande de transfert">
         <t t-call="website.layout">
             <div id="wrap">
                 <div class="oe_structure">
@@ -60,7 +60,7 @@
                             </div>
 
                             <div class="clearfix oe_login_buttons">
-                                <button type="submit" class="btn btn-primary pull-left">Create Student</button>
+                                <button type="submit" class="btn btn-primary pull-left">Envoyee Demande</button>
                             </div>
                         </form>
                     </div>
