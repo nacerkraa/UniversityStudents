@@ -19,6 +19,8 @@
                 <field name="email"/>
                 <field name="address"/>
                 <field name="nationality"/>
+                <field name="f_bac"/>
+                <field name="e_level"/>
                 <field name="current_university" string="University" optional="show"/>
                 <field name="current_faculty" string="Faculty" optional="show"/>
                 <field name="rate" optional="show"/>
@@ -70,6 +72,8 @@
                             <field name="rate"/>
                             <field name="e_level" string="annee actuel" optional="show"/>
                             <field name="file" filename="file_name" string="Student Files"/>
+                            <field name="f_bac"/>
+                            <field name="e_level"/>
                             <field name="file_name" invisible="1"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>
