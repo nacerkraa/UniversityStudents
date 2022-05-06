@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="menu_student_form12" model="website.menu">
+        <field name="name">Create Student</field>
+        <field name="url">/student_webform</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">55</field>
+    </record>
+
+    <template id="create_student" name="Create Student">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/create/webstudent" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                            <div class="form-group">
+                                <label for="student_ref" class="control-label">Ref :</label>
+                                <input type="text" name="ref" t-att-value="ref" id="student_ref"
+                                       class="form-control" placeholder="registration number" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_name" class="control-label">Name</label>
+                                <input type="text" name="first_name" t-att-value="first_name" id="student_name"
+                                       class="form-control" placeholder="Enter Your Name" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_email" class="control-label">Email :</label>
+                                <input type="email" name="email" t-att-value="email" id="student_email"
+                                       class="form-control" placeholder="Enter Your Email" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_univ" class="control-label">University :</label>
+                                <input type="text" name="current_university" t-att-value="current_university"
+                                       id="student_univ"
+                                       class="form-control" placeholder="Enter Your Current University"
+                                       required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_level" class="control-label">Level :</label>
+                                <select class="form-control" name="e_level">
+                                    <option t-attf-value="L1">1er année de licence</option>
+                                    <option t-attf-value="L2">2eme année de licence</option>
+                                    <option t-attf-value="L3">3eme année de licence</option>
+                                    <option t-attf-value="M1">1ere master</option>
+                                    <option t-attf-value="M2">2eme master</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_date" class="control-label">L'annie de bac :</label>
+                                <input type="date" name="establish_date" t-att-value="establish_date" id="student_date"
+                                       class="form-control" required="required"/>
+                            </div>
+
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Create Student</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <record id="student_thanks" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/student-thank-you</field>
+        <field name="website_published">True</field>
+        <field name="key">om_university.student_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="school_management.student_thanks">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="container">
+                            <h1>Thanks!</h1>
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <div class="alert alert-success" role="status">
+                                        La demande a été envoyée avec succès.
+                                    </div>
+                                    <p>
+                                        Visitez notre site Web à tout moment
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+</odoo>
