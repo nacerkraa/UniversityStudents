@@ -16,10 +16,8 @@
                 <field name="last_name" string="Prenom"/>
                 <field name="establish_date" string="Date de 1ére inscription à l'université" optional="show"/>
                 <field name="email"/>
-<<<<<<< HEAD
                 <field name="address"/>
-=======
->>>>>>> refs/remotes/origin/master
+                <field name="nationality"/>
                 <field name="current_university" string="University" optional="show"/>
                 <field name="current_faculty" string="Faculty" optional="show"/>
                 <field name="rate" optional="show"/>
@@ -61,6 +59,7 @@
                             <field name="email"/>
                             <field name="establish_date" string="Annie du BAC" optional="show"/>
                             <field name="address"/>
+                            <field name="nationality"/>
                         </group>
 
                         <group>
