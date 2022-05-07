@@ -14,6 +14,7 @@
         'views/faculty_view.xml',
         'views/univ_view.xml',
         'views/website_form.xml',
+        'data/mail_template.xml',
     ],
     'demo': [],
     'sequence': -100,
