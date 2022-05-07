@@ -21,8 +21,8 @@ class School(http.Controller):
     def student_webform(self, **kw):
         return http.request.render('om_university.create_student', {'first_name': 'Nacer'})
 
-    @http.route('/create/webstudent', type="http", auth="public", website=True)
+    @http.route('/create/webstudent', type="http", auth="user", website=True)
     def create_webpatient(self, **kw):
-        request.env['university.student'].create(kw)
+        request.env['university.student'].sudo().create(kw)
         return request.render("om_university.student_thanks", {})
 
