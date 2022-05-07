@@ -1,11 +1,12 @@
-from  datetime import date
+from datetime import date
 from odoo import api, fields, models
+
+
 class UniversityStudent(models.Model):
     _name = 'university.student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _description = 'University Student'
     _rec_name = 'ref'
-
 
     ref = fields.Char(string="Ref")
     first_name = fields.Char(string="Firstname")
@@ -25,11 +26,10 @@ class UniversityStudent(models.Model):
     establish_date = fields.Date(string="Establish Date")
     n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
     c_academic = fields.Selection([('Oui', 'Oui'),
-                                ('Non', 'Non')], string="Level")
+                                   ('Non', 'Non')], string="Level")
     current_university = fields.Char(string="University")
     current_faculty = fields.Char(string="Faculty1")
     next_faculty = fields.Char(string="Faculty2")
-
 
     n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
@@ -38,29 +38,21 @@ class UniversityStudent(models.Model):
     file = fields.Binary(string='file', attachment=True)
     file_name = fields.Char("File Name")
     state = fields.Selection([('draft', 'Draft'),
-                                ('under_review', 'Under Review'),
-                                ('accepted', 'Accepted'),
-                                ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True)
+                              ('under_review', 'Under Review'),
+                              ('accepted', 'Accepted'),
+                              ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True)
 
-    @profile()
-    def action_send_session_by_email(self):
-        # for attendee in self.attendee_ids:
-        ctx = {}
-        email_list = self.attendee_ids.mapped('email')
-        if email_list:
-            ctx['email_to'] = ','.join([email for email in email_list if email])
-            ctx['email_from'] = self.env.user.company_id.email
-            ctx['send_email'] = True
-            ctx['attendee'] = ''
-            template = self.env.ref('openacademy.email_template_openacademy_session')
-            template.with_context(ctx).send_mail(self.id, force_send=True, raise_exception=False)
-
-
+    def action_send_reply_by_email(self):
+        print('Sending Email...')
+        template_id = self.env.ref('om_university.student_card_email_template').id
+        print("template id", template_id)
+        template = self.env['mail.template'].browse(template_id)
+        print("template ", template)
+        # self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
     @api.constrains('file')
     def _check_file(self):
         if str(self.file_name.split(".")[1]) != 'pdf':
             raise ValidationError("Cannot upload file different from .pdf file")
-
 
     @api.depends('establish_date')
     def _cumpute_years(self):
@@ -71,7 +63,6 @@ class UniversityStudent(models.Model):
             else:
                 rec.n_years = 0
 
-
     @api.depends('current_university')
     def _cumpute_transfer(self):
         for rec in self:
@@ -80,22 +71,19 @@ class UniversityStudent(models.Model):
             else:
                 rec.type_transfer = 'Extarne'
 
-
     # action on click on button
     def action_draft(self):
         for rec in self:
-                rec.state = 'draft'
+            rec.state = 'draft'
 
     def action_in_review(self):
         for rec in self:
-                rec.state = 'under_review'
+            rec.state = 'under_review'
 
     def action_accepted(self):
         for rec in self:
-                rec.state = 'accepted'
+            rec.state = 'accepted'
 
     def action_refused(self):
         for rec in self:
-                rec.state = 'refused'
-
-
+            rec.state = 'refused'
