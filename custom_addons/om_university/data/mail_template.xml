@@ -8,13 +8,14 @@
             <field name="model_id" ref="om_university.model_university_student"/>
             <field name="email_from">{{ (object.invoice_user_id.email_formatted or user.email_formatted) }}</field>
             <field name="email_to">{{ object.email }}</field>
-            <field name="subject">Student Card Invoice {{ object.ref }}</field>
+            <field name="lang">${object.lang}</field>
+            <field name="subject">Invoice (Ref {{ object.name or 'n/a' }})</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <p style="margin: 0px; padding: 0px; font-size: 13px;">
-                        Dear {{object.name}}
+                        Dear
                         <br/><br/>
-                        Here is your replay from your university
+                        Here is your
                         <br/><br/>
                         Do not hesitate to contact us if you have any questions.
                     </p>

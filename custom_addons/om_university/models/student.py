@@ -9,6 +9,7 @@ class UniversityStudent(models.Model):
     _rec_name = 'ref'
 
     ref = fields.Char(string="Ref")
+    lang = fields.Char(string="English")
     first_name = fields.Char(string="Firstname")
     last_name = fields.Char(string="Lastname")
     email = fields.Char(string="Email")
@@ -43,12 +44,10 @@ class UniversityStudent(models.Model):
                               ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True)
 
     def action_send_reply_by_email(self):
-        print('Sending Email...')
         template_id = self.env.ref('om_university.student_card_email_template').id
-        print("template id", template_id)
         template = self.env['mail.template'].browse(template_id)
-        print("template ", template)
-        # self.env['mail.template'].browse(template_id).send_mail(self.id, force_send=True)
+        template.send_mail(self.ref, force_send=True)
+
     @api.constrains('file')
     def _check_file(self):
         if str(self.file_name.split(".")[1]) != 'pdf':
