@@ -31,6 +31,7 @@ class UniversityStudent(models.Model):
     current_faculty = fields.Char(string="Faculty1")
     next_faculty = fields.Char(string="Faculty2")
 
+    # Other fields
     n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     comment = fields.Html(string="comment")
