@@ -9,7 +9,6 @@ class UniversityStudent(models.Model):
     _rec_name = 'ref'
 
     ref = fields.Char(string="Ref")
-    lang = fields.Char(string="English")
     first_name = fields.Char(string="Firstname")
     last_name = fields.Char(string="Lastname")
     email = fields.Char(string="Email")
