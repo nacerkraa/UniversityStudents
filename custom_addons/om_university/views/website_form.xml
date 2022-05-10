@@ -13,7 +13,7 @@
             <div id="wrap">
                 <div class="oe_structure">
                     <div class="container">
-                        <form role="form" action="/create/webstudent" method="POST">
+                        <form role="form" action="/create/webstudent" enctype="multipart/form-data" method="POST">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 
                             <div class="form-group">
@@ -57,6 +57,11 @@
                                 <label for="student_date" class="control-label">L'annie de bac :</label>
                                 <input type="date" name="establish_date" t-att-value="establish_date" id="student_date"
                                        class="form-control" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="student_image" class="control-label">Image de bac :</label>
+                                <input type="file" name="task_attachment" multiple="true"/>
                             </div>
 
                             <div class="clearfix oe_login_buttons">

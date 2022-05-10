@@ -75,6 +75,7 @@
                             <field name="e_level" string="Annie actuel"/>
                             <field name="n_years_repeating"/>
                             <field name="file" filename="file_name" string="Student Files"/>
+                            <field name="task_attachment" string="Attachment Image" widget="many2many_binary"/>
                             <field name="file_name" invisible="1"/>
                             <field name="type_transfer" invisible="1"/>
                             <field name="active" invisible="1"/>

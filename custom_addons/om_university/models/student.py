@@ -36,6 +36,11 @@ class UniversityStudent(models.Model):
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     comment = fields.Html(string="comment")
     active = fields.Boolean(string="Active", default=True)
+    task_attachment = fields.Many2many(comodel_name="ir.attachment",
+                                relation="m2m_ir_identity_card_rel",
+                                column1="m2m_id",
+                                column2="attachment_id",
+                                string="Identity Card")
     file = fields.Binary(string='file', attachment=True)
     file_name = fields.Char("File Name")
     state = fields.Selection([('draft', 'Draft'),
