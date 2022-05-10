@@ -47,7 +47,7 @@ class UniversityStudent(models.Model):
         template_obj = self.env['mail.mail']
         template_data = {
             'subject': 'messege from the university of : ' + self.university,
-            'body_html': 'the messege here',
+            'body_html': 'the message here',
             'email_from': 'name@univ.edu',
             'email_to': self.email
         }
