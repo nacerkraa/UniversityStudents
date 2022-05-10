@@ -44,9 +44,15 @@ class UniversityStudent(models.Model):
                               ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True)
 
     def action_send_reply_by_email(self):
-        template_id = self.env.ref('om_university.student_card_email_template').id
-        template = self.env['mail.template'].browse(template_id)
-        template.send_mail(self.ref, force_send=True)
+        template_obj = self.env['mail.mail']
+        template_data = {
+            'subject': 'Due Invoice Notification : ',
+            'body_html': 'hello email',
+            'email_from': 'nacer@gmail.com',
+            'email_to': self.email
+        }
+        template_id = template_obj.create(template_data)
+        template_obj.send(template_id)
 
     @api.constrains('file')
     def _check_file(self):

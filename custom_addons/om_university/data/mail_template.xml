@@ -6,10 +6,10 @@
         <record id="student_card_email_template" model="mail.template">
             <field name="name">Student card: Send by email</field>
             <field name="model_id" ref="om_university.model_university_student"/>
-            <field name="email_from">{{ (object.invoice_user_id.email_formatted or user.email_formatted) }}</field>
-            <field name="email_to">{{ object.email }}</field>
-<!--            <field name="lang">${object.invoice_user_id.lang}</field>-->
-            <field name="subject">Invoice (Ref {{ object.name or 'n/a' }})</field>
+            <field name="email_from">${object.user_id.email_formatted |safe}</field>
+            <field name="email_to">${object.email_id}</field>
+            <!-- <field name="lang">${object.invoice_user_id.lang}</field>-->
+            <field name="subject">Patient Card (Ref ${object.name_seq})</field>
             <field name="body_html" type="html">
                 <div style="margin: 0px; padding: 0px;">
                     <p style="margin: 0px; padding: 0px; font-size: 13px;">
