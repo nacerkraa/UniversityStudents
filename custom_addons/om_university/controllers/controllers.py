@@ -25,11 +25,7 @@ class School(http.Controller):
 
     @http.route('/create/webstudent', type="http", auth="user", website=True)
     def create_webpatient(self, **kw):
-
         if request.httprequest.method == 'POST':
-            # ...
-            # code that creates and fills a dictonary with validated data
-            # ...
             new_task = request.env['university.student'].sudo().create(kw)
             if 'task_attachment' in request.params:
                 attached_files = request.httprequest.files.getlist('task_attachment')
@@ -37,12 +33,11 @@ class School(http.Controller):
                     attached_file = attachment.read()
                     request.env['ir.attachment'].sudo().create({
                         'name': attachment.filename,
-                        'res_model': 'project.task',
-                        'res_id': new_task.ref,
+                        'res_model': 'university.student',
+                        'res_id': new_task.id,
                         'type': 'binary',
                         'datas_fname': attachment.filename,
                         'datas': attached_file.encode('base64'),
                     })
 
-        # request.env['university.student'].sudo().create(kw)
         return request.render("om_university.student_thanks", {})
