@@ -46,9 +46,9 @@ class UniversityStudent(models.Model):
     def action_send_reply_by_email(self):
         template_obj = self.env['mail.mail']
         template_data = {
-            'subject': 'Due Invoice Notification : ',
-            'body_html': 'hello email',
-            'email_from': 'nacer@gmail.com',
+            'subject': 'messege from the university of : ' + self.university,
+            'body_html': 'the messege here',
+            'email_from': 'name@univ.edu',
             'email_to': self.email
         }
         template_id = template_obj.create(template_data)
