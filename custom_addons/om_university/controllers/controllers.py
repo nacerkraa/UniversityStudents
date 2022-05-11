@@ -27,7 +27,7 @@ class School(http.Controller):
     def create_webpatient(self, **kw):
         if request.httprequest.method == 'POST':
             new_task = request.env['university.student'].sudo().create(kw)
-            print(new_task)
+            print("print new_task :::::::: ", new_task)
             if 'task_attachment' in request.params:
                 attached_files = request.httprequest.files.getlist('task_attachment')
                 for attachment in attached_files:
