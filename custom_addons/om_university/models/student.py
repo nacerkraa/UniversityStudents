@@ -41,8 +41,6 @@ class UniversityStudent(models.Model):
     type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     comment = fields.Html(string="comment")
     active = fields.Boolean(string="Active", default=True)
-    file = fields.Binary(string='file', attachment=True)
-    file_name = fields.Char("File Name")
     state = fields.Selection([('draft', 'Draft'),
                               ('under_review', 'Under Review'),
                               ('accepted', 'Accepted'),
@@ -58,11 +56,6 @@ class UniversityStudent(models.Model):
         }
         template_id = template_obj.create(template_data)
         template_obj.send(template_id)
-
-    @api.constrains('file')
-    def _check_file(self):
-        if str(self.file_name.split(".")[1]) != 'pdf':
-            raise ValidationError("Cannot upload file different from .pdf file")
 
     @api.depends('establish_date')
     def _cumpute_years(self):

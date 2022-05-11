@@ -27,6 +27,7 @@ class School(http.Controller):
     def create_webpatient(self, **kw):
         if request.httprequest.method == 'POST':
             new_task = request.env['university.student'].sudo().create(kw)
+            print(new_task)
             if 'task_attachment' in request.params:
                 attached_files = request.httprequest.files.getlist('task_attachment')
                 for attachment in attached_files:
@@ -39,5 +40,4 @@ class School(http.Controller):
                         'datas_fname': attachment.filename,
                         'datas': attached_file.encode('base64'),
                     })
-
         return request.render("om_university.student_thanks", {})

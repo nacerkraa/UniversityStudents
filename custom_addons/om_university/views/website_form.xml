@@ -69,18 +69,6 @@
                             </div>
                         </form>
 
-                        <form role="form" action="/create/webstudent" enctype="multipart/form-data" method="POST">
-                            <div class="form-group">
-                                <label for="student_image" class="control-label">Image de bac :</label>
-                                <input type="file" name="task_attachment" multiple="true"/>
-                            </div>
-
-                            <div class="clearfix oe_login_buttons">
-                                <button type="submit" class="btn btn-primary pull-left">Envoyee Demande</button>
-                            </div>
-                        </form>
-
-
                     </div>
                 </div>
             </div>
