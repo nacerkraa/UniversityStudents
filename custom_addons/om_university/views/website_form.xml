@@ -30,8 +30,8 @@
 
 
                             <div class="form-group">
-                                <label for="student_image" class="control-label">Image de bac :</label>
-                                <input type="file" name="task_attachment" multiple="true"/>
+                                <label for="student_files" class="control-label">Files of student :</label>
+                                <input type="file" name="task_attachment" multiple="multiple" id="student_files"/>
                             </div>
 
                             <div class="clearfix oe_login_buttons">
