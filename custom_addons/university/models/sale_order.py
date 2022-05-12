@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
-    name = fields.Char()
+    confirmed_user_id = fields.Many2one('res.users', string="Confirmed User")
     # value = fields.Integer()
     # value2 = fields.Float(compute="_value_pc", store=True)
     # description = fields.Text()
