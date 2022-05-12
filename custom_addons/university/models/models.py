@@ -3,9 +3,9 @@
 # from odoo import models, fields, api
 
 
-# class test_website(models.Model):
-#     _name = 'test_website.test_website'
-#     _description = 'test_website.test_website'
+# class university(models.Model):
+#     _name = 'university.university'
+#     _description = 'university.university'
 
 #     name = fields.Char()
 #     value = fields.Integer()
