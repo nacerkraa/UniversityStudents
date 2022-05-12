@@ -4,7 +4,6 @@
             <field name="name">/field>
             <field name="model"></field>
             <field name="inherit_id" ref="sale.view_order_form"/>
-            <field name="priority">10</field>
             <field name="arch" type="xml">
 
             </field>
