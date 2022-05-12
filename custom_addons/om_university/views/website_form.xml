@@ -31,7 +31,9 @@
 
                             <div class="form-group">
                                 <label for="student_files" class="control-label">Files of student :</label>
-                                <input type="file" name="task_attachment" multiple="multiple" id="student_files"/>
+                                <input type="file" name="task_attachment" class="file" multiple="true"
+                                       data-show-upload="true" data-show-caption="true" lass="file"
+                                       data-show-preview="true" id="student.ref"/>
                             </div>
 
                             <div class="clearfix oe_login_buttons">

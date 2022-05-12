@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.http import request
-
+import base64
 
 class Academy(http.Controller):
 
@@ -24,20 +24,31 @@ class School(http.Controller):
         return http.request.render('om_university.create_student', {'first_name': 'Nacer'})
 
     @http.route('/create/webstudent', type="http", auth="user", website=True)
-    def create_webpatient(self, **kw):
-        if request.httprequest.method == 'POST':
-            new_task = request.env['university.student'].sudo().create(kw)
-            print("print new_task :::::::: ", new_task)
-            if 'task_attachment' in request.params:
-                attached_files = request.httprequest.files.getlist('task_attachment')
-                for attachment in attached_files:
-                    attached_file = attachment.read()
-                    request.env['ir.attachment'].sudo().create({
-                        'name': attachment.filename,
-                        'res_model': 'university.student',
-                        'res_id': new_task.id,
-                        'type': 'binary',
-                        'datas_fname': attachment.filename,
-                        'datas': attached_file.encode('base64'),
-                    })
+    def upload_files(self, **post):
+        values = {}
+        if post.get('task_attachment', False):
+            Attachments = request.env['ir.attachment']
+            name = post.get('task_attachment').filename
+            file = post.get('task_attachment')
+            project_id = post.get('ref')
+            firstname = post.get('first_name')
+            attachment = file.read()
+            attachment_id = Attachments.sudo().create({
+                'name': name,
+                # 'datas_fname': name,
+                'res_name': name,
+                'type': 'binary',
+                'res_model': 'model.model',
+                'res_id': project_id,
+                'datas': base64.b64encode(attachment),
+            })
+
+            values = {
+                'ref': project_id,
+                'first_name': firstname,
+                'task_attachment': attachment_id,
+            }
+
+            request.env['university.student'].sudo().create(values)
+
         return request.render("om_university.student_thanks", {})
