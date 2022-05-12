@@ -28,4 +28,6 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'sequence': -90,
+    'application': True,
 }
