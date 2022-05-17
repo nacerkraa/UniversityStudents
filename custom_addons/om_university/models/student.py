@@ -11,15 +11,15 @@ class UniversityStudent(models.Model):
     ref = fields.Char(string="Ref")
     first_name = fields.Char(string="Firstname")
     task_attachment = fields.Many2many(comodel_name="ir.attachment",
-                                relation="m2m_ir_identity_card_rel",
-                                column1="m2m_id",
-                                column2="attachment_id",
-                                string="Identity Card")
-    e_level = fields.Selection([('L1', '1er année de licence'),
-                                ('L2', '2eme année de licence'),
-                                ('L3', '3eme année de licence'),
-                                ('M1', '1ere master'),
-                                ('M2', '2eme master')], string="Level")
+                                       relation="m2m_ir_identity_card_rel",
+                                       column1="m2m_id",
+                                       column2="attachment_id",
+                                       string="Identity Card")
+    e_level = fields.Selection([('1', '1er année de licence'),
+                                ('2', '2eme année de licence'),
+                                ('3', '3eme année de licence'),
+                                ('4', '1ere master'),
+                                ('5', '2eme master')], string="Level")
     n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     establish_date = fields.Date(string="Establish Date")
     # last_name = fields.Char(string="Lastname")
@@ -44,7 +44,8 @@ class UniversityStudent(models.Model):
     state = fields.Selection([('draft', 'Draft'),
                               ('under_review', 'Under Review'),
                               ('accepted', 'Accepted'),
-                              ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True)
+                              ('refused', 'Refused')], default='draft', string='Status', required=True, tracking=True,
+                             compute='_cumpute_status')
 
     def action_send_reply_by_email(self):
         template_obj = self.env['mail.mail']
@@ -66,13 +67,14 @@ class UniversityStudent(models.Model):
             else:
                 rec.n_years = 0
 
-    @api.depends('current_university')
-    def _cumpute_transfer(self):
+    @api.depends('e_level')
+    def _cumpute_status(self):
         for rec in self:
-            if rec.current_university == 'Université abdelhamid mehri constantine 2':
-                rec.type_transfer = 'Interne'
+            numbre_des_annies = 3
+            if int(rec.e_level) >= numbre_des_annies:
+                rec.state = 'refused'
             else:
-                rec.type_transfer = 'Extarne'
+                rec.state = 'accepted'
 
     # action on click on button
     def action_draft(self):
