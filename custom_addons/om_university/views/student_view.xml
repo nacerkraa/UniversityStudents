@@ -13,6 +13,7 @@
 
                 <field name="ref" string="n° d'immatriculation" optional="hide"/>
                 <field name="first_name" string="Nom" optional="show"/>
+                <field name="e_level" optional="show"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
@@ -26,7 +27,6 @@
                 <!--<field name="address" optional="hide"/>-->
                 <!--<field name="nationality" optional="hide"/>-->
                 <!--<field name="f_bac" optional="hide"/>-->
-                <!--<field name="e_level" optional="show"/>-->
                 <!--<field name="current_university" string="University" optional="show"/>-->
                 <!--<field name="current_faculty" string="Faculty" optional="show"/>-->
                 <!--<field name="rate" optional="show"/>-->
@@ -70,10 +70,10 @@
                         </group>
 
                         <group>
+                            <field name="e_level" string="Annie actuel"/>
                             <field name="task_attachment" string="Attachment Image" widget="many2many_binary"/>
                             <!--<field name="current_university" string="University" help="the name of the university"/>-->
                             <!-- <field name="current_faculty" string="Faculty"/>-->
-                            <!-- <field name="e_level" string="Annie actuel"/>-->
                             <!--<field name="n_years_repeating"/>-->
                             <!--<field name="type_transfer" invisible="1"/>-->
                             <field name="active" invisible="1"/>
