@@ -16,6 +16,12 @@ class UniversityStudent(models.Model):
                                 column1="m2m_id",
                                 column2="attachment_id",
                                 string="Identity Card")
+    e_level = fields.Selection([('L1', '1er année de licence'),
+                                ('L2', '2eme année de licence'),
+                                ('L3', '3eme année de licence'),
+                                ('M1', '1ere master'),
+                                ('M2', '2eme master')], string="Level")
+    n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     # email = fields.Char(string="Email")
     # age = fields.Integer(string="Age")
     # address = fields.Char(string="Address")
@@ -23,11 +29,6 @@ class UniversityStudent(models.Model):
     # s_bac = fields.Char(string="Serie de Bac")
     # f_bac = fields.Char(string="Filiere de Bac")
     # rate = fields.Float(string="Rate")
-    # e_level = fields.Selection([('L1', '1er année de licence'),
-    #                             ('L2', '2eme année de licence'),
-    #                             ('L3', '3eme année de licence'),
-    #                             ('M1', '1ere master'),
-    #                             ('M2', '2eme master')], string="Level")
     # establish_date = fields.Date(string="Establish Date")
     # n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
     # c_academic = fields.Selection([('Oui', 'Oui'),
@@ -37,7 +38,6 @@ class UniversityStudent(models.Model):
     # next_faculty = fields.Char(string="Faculty2")
 
     # Other fields
-    # n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     # type_transfer = fields.Char(string="type", compute='_cumpute_transfer')
     comment = fields.Html(string="comment")
     active = fields.Boolean(string="Active", default=True)
