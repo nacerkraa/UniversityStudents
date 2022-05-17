@@ -22,6 +22,9 @@ class UniversityStudent(models.Model):
                                 ('5', '2eme master')], string="Level")
     n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     establish_date = fields.Date(string="Establish Date")
+    n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
+    c_academic = fields.Selection([('1', 'Oui'),
+                                   ('0', 'Non')], string="Level")
     # last_name = fields.Char(string="Lastname")
     # email = fields.Char(string="Email")
     # age = fields.Integer(string="Age")
@@ -30,9 +33,6 @@ class UniversityStudent(models.Model):
     # s_bac = fields.Char(string="Serie de Bac")
     # f_bac = fields.Char(string="Filiere de Bac")
     # rate = fields.Float(string="Rate")
-    # n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
-    # c_academic = fields.Selection([('Oui', 'Oui'),
-    #                                ('Non', 'Non')], string="Level")
     # current_university = fields.Char(string="University")
     # current_faculty = fields.Char(string="Faculty1")
     # next_faculty = fields.Char(string="Faculty2")
