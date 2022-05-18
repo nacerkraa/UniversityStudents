@@ -14,12 +14,14 @@
                 <field name="ref" string="n° d'immatriculation" optional="hide"/>
                 <field name="first_name" string="Nom" optional="show"/>
                 <field name="e_level" optional="show"/>
+                <field name="c_academic" optional="show"/>
                 <field name="state" string="Status"
                        decoration-success="state == 'accepted'"
                        decoration-info="state == 'draft'"
                        decoration-warning="state == 'under_review'"
                        decoration-danger="state == 'refused'"
                        widget="badge"/>
+                <field name="n_years_repeating" optional="hide"/>
                 <!--<field name="s_bac" string="Serie de Bac" />-->
                 <!--<field name="last_name" string="Prenom" optional="hide"/>-->
                 <!--<field name="establish_date" string="Date de 1ére inscription à l'université" optional="hide"/>-->
@@ -32,7 +34,6 @@
                 <!--<field name="rate" optional="show"/>-->
                 <!--<field name="n_years" string="n° des annis" optional="hide"/>-->
                 <!--<field name="type_transfer" string="Type de transfert" optional="show"/>-->
-                <!--<field name="n_years_repeating" optional="hide"/>-->
             </tree>
         </field>
     </record>
@@ -70,11 +71,12 @@
                         </group>
 
                         <group>
-                            <field name="e_level" string="Annie actuel"/>
+                            <field name="e_level" string="Annie actuel: "/>
+                            <field name="c_academic" string="Cangé Acadimique: "/>
                             <field name="task_attachment" string="Attachment Image" widget="many2many_binary"/>
+                            <field name="n_years_repeating"/>
                             <!--<field name="current_university" string="University" help="the name of the university"/>-->
                             <!-- <field name="current_faculty" string="Faculty"/>-->
-                            <!--<field name="n_years_repeating"/>-->
                             <!--<field name="type_transfer" invisible="1"/>-->
                             <field name="active" invisible="1"/>
                         </group>

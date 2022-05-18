@@ -23,8 +23,8 @@ class UniversityStudent(models.Model):
     n_years = fields.Integer(string="Years number on university", compute='_cumpute_years')
     establish_date = fields.Date(string="Establish Date")
     n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
-    c_academic = fields.Selection([('1', 'Oui'),
-                                   ('0', 'Non')], string="Level")
+    c_academic = fields.Selection([('0', 'Oui'),
+                                   ('1', 'Non')], string="Level")
     # last_name = fields.Char(string="Lastname")
     # email = fields.Char(string="Email")
     # age = fields.Integer(string="Age")
@@ -67,11 +67,11 @@ class UniversityStudent(models.Model):
             else:
                 rec.n_years = 0
 
-    @api.depends('e_level')
+    @api.depends('e_level', 'c_academic')
     def _cumpute_status(self):
         for rec in self:
-            numbre_des_annies = 3
-            if int(rec.e_level) >= numbre_des_annies:
+            numbre_des_annies = 3 - int(rec.c_academic)
+            if int(rec.e_level) > numbre_des_annies:
                 rec.state = 'refused'
             else:
                 rec.state = 'accepted'
