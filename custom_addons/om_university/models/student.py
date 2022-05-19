@@ -26,7 +26,7 @@ class UniversityStudent(models.Model):
     c_academic = fields.Selection([('1', 'Oui'),
                                    ('0', 'Non')], string="Level")
     # last_name = fields.Char(string="Lastname")
-    # email = fields.Char(string="Email")
+    email = fields.Char(string="Email")
     # age = fields.Integer(string="Age")
     # address = fields.Char(string="Address")
     # nationality = fields.Char(string="Nationality")
