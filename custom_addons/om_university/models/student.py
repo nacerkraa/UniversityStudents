@@ -5,7 +5,7 @@ from odoo import api, fields, models
 class UniversityStudent(models.Model):
     _name = 'university.student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _description = 'University Student from university'
+    _description = 'University Student'
     _rec_name = 'ref'
 
     ref = fields.Char(string="Ref")
