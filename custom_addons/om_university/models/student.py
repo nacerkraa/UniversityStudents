@@ -5,7 +5,7 @@ from odoo import api, fields, models
 class UniversityStudent(models.Model):
     _name = 'university.student'
     _inherit = ['mail.thread', 'mail.activity.mixin']
-    _description = 'University Student'
+    _description = 'University Student from university'
     _rec_name = 'ref'
 
     ref = fields.Char(string="Ref")
@@ -24,7 +24,7 @@ class UniversityStudent(models.Model):
     establish_date = fields.Date(string="Establish Date")
     n_years_repeating = fields.Integer(string="numbre des annie rdeblement")
     c_academic = fields.Selection([('1', 'Oui'),
-                                   ('0', 'Non')], string="Level")
+                                   ('0', 'Non')], string="number de cange acadimique")
     # last_name = fields.Char(string="Lastname")
     # email = fields.Char(string="Email")
     # age = fields.Integer(string="Age")
